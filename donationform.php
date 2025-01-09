@@ -41,8 +41,7 @@
             var type = document.getElementById('type');
             var label = document.getElementById('label');
             var otherfood = document.getElementById('other');
-            
-
+        
             type.addEventListener('change', function () {
             if (type.value === 'others') {
 
@@ -55,5 +54,21 @@
         });
     </script>
 </body>
-
+<?php
+    include'database.php';
+    session_start();
+    if ($_SERVER['REQUEST_METHOD']==='POST'){
+        $foodtype = $_POST['food_type'];
+        $foodname = $_POST['food_name'];
+        $quantity = $_POST['quantity'];
+        $expiration = $_POST['expiry_date'];
+        $pick_up = $_POST['location'];
+        $sql= "INSERT INTO Donations (foodtype, foodname, quantity, expiration, pick_up ) VALUES ($foodtype, $foodname, $quantity, $expiry_date, $location)";
+        if ($conn->query($sql)===TRUE){
+            echo"Donation Succesfull";
+        } else {
+            echo "Error: ".$conn->error;
+        }
+    }
+?>
 </html>
