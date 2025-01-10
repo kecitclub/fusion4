@@ -3,17 +3,24 @@ echo "<nav>";
 echo "<a href = 'index.php'>Home</a>|";
 echo "<a href = 'about.php'>About</a>|";
 echo "<a href = 'contact.php'>Contact</a>|";
+echo '<link rel="stylesheet" type="text/css" href="front.css">';
 echo "</nav>";
 echo "<hr>";
 
 echo "<h1>Welcome to Discover Nepal</h1>";
-echo "<p>Explore the beauty of Nepal and its wonders.</p>";
+echo "<h2>Explore the beauty of Nepal and its wonders.</h2>";
 
 $feature_destinations = [
     ['name' => 'Kathmandu', 'description' => 'It is a religious place.', 'image' => 'kathmandu.jpg'],
     ['name' => 'Lumbini', 'description' => 'It is the birthplace of Lord Buddha.', 'image' => 'lumbini.jpg'],
     ['name' => 'Pokhara', 'description' => 'It is a beautiful city.', 'image' => 'pokhara.jpg'],
-    ['name' => 'Chitwan', 'description' => 'It is a place where you can see wild animals.', 'image' => 'chitwan.jpg'],
+    [
+        'name' => 'Chitwan',
+        'description' => 'It is a place where you can see wild animals.',
+        'image' => 'chitwan.jpg',
+        'height' => '80%'
+    ],
+    
     ['name' => 'Everest', 'description' => 'It is the highest peak in the world.', 'image' => 'mt-everest.jpg']
 ];
 
@@ -21,16 +28,19 @@ echo "<h2>Featured Destinations</h2>";
 echo "<div style='display: flex; flex-wrap: wrap; gap: 20px;'>";
 
 foreach ($feature_destinations as $destination) {
-    echo "<div style='border: 1px solid #333; padding: 10px; width: 200px; text-align: center;'>";
+    echo "<div class='destination-card'>";
     echo "<h3>{$destination['name']}</h3>";
-    echo "<img src='{$destination['image']}' alt='{$destination['name']}' style='width: 100%; height: auto;'><br>";
+    echo "<img src='{$destination['image']}' alt='{$destination['name']}' class='destination-image'>";
     echo "<p>{$destination['description']}</p>";
     echo "</div>";
 }
 
+
+
+
 echo "</div>";
 
-$hidden_destinations = [
+$hidden_destinations  = [
     [
         'name' => 'Manang',
         'description' => 'Manang is a beautiful valley surrounded by snow-capped peaks.',
@@ -65,19 +75,21 @@ $hidden_destinations = [
 
 echo "<h2>Hidden Destinations</h2>";
 echo "<ul>";
+echo "<ul style='list-style: none; padding: 0;'>";
 foreach ($hidden_destinations as $destination) {
-    echo "<li>";
+    echo "<li style='margin-bottom: 20px; text-align: center; overflow: hidden;'>"; // Text and content centered
     echo "<h3>{$destination['name']}</h3>";
-    echo "<strong>Description:</strong> {$destination['description']}<br>";
-    echo "<strong>Culture:</strong> {$destination['culture']}<br>";
+    echo "<p><strong>Description:</strong> {$destination['description']}</p>";
+    echo "<p><strong>Culture:</strong> {$destination['culture']}</p>";
 
-    echo "<div class='images'>";
+    echo "<div style='display: inline-block; text-align: center;'>"; // Wrap images in a centered block
     foreach ($destination['images'] as $image) {
-        echo "<img src='{$image}' alt='{$destination['name']}' style='width: 200px; height: auto; margin-right: 10px;'><br>";
+        echo "<img src='{$image}' alt='{$destination['name']}' style='display: block; margin: 10px auto; max-width: 200px; height: auto;'>"; // Center images
     }
     echo "</div>";
     echo "</li>";
 }
 echo "</ul>";
+
 echo "<hr>";
 ?>
