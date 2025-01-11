@@ -235,6 +235,7 @@ input:valid {
 }
 
 .bottom{
+  background-color: white;
   position: absolute;
   text-align: center;
   margin-top: 30%;
@@ -249,4 +250,7 @@ input:valid {
 }
 nav{
   text-decoration: none;
+}
+.ss{
+  color:#3b1f1f
 }

@@ -1,8 +1,7 @@
 <?php
-session_start(); 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+session_start(); // Start session management
 
+// Database connection
 $host = 'localhost';
 $dbName = 'admin';
 $username = 'root';
@@ -15,6 +14,7 @@ try {
     die("Error: Unable to connect to database: " . $e->getMessage());
 }
 
+// Helper function to check if admin is logged in
 function checkAdminLoggedIn() {
     if (!isset($_SESSION['admin_logged_in']) || !$_SESSION['admin_logged_in']) {
         header('Location: login.php');
@@ -22,25 +22,11 @@ function checkAdminLoggedIn() {
     }
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = :username AND password = :password");
-    $stmt->execute([':username' => $username, ':password' => $password]);
-    $admin = $stmt->fetch();
-
-    if ($admin) {
-        $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_id'] = $admin['id'];
-        header('Location: dashboard.php');
-        exit;
-    } else {
-        $error = "Invalid username or password!";
-    }
-}
 ?>
 
+<?php
+include 'login.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,12 +45,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 </html>
 
+<!-- File: dashboard.php -->
 <?php
+require 'common.php'; // Database and session setup
 checkAdminLoggedIn();
 
+// Fetch some example data, e.g., number of users
 $userCount = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,10 +65,11 @@ $userCount = $pdo->query("SELECT COUNT(*) FROM users")->fetchColumn();
 </body>
 </html>
 
+<!-- File: logout.php -->
 <?php
 session_start();
-$_SESSION = [];
-session_destroy();
-header('Location: login.php');
+$_SESSION = []; // Clear all session variables
+session_destroy(); // Destroy session
+header('Location: login.php'); // Redirect to login
 exit;
 ?>

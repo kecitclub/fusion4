@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Execute the query
     if ($conn->query($sql) === TRUE) {
-        echo "Booking saved successfully!";
+        echo "<h1>Booking saved successfully!</h1>";
         
         // Redirect to confirmation page after saving data
        
