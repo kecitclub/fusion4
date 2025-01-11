@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #91C8E4;
+    text-align: center;
+  }
+  
+  h1{
+    color: #000000;
+    font: oblique;
+  }
+  h3{
+    color:#749BC2;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .second_container{
+    display: flex
+    ;
+        /* left: 95px; */
+        position: relative;
+        justify-content: center;
+        /* padding: 0px; */
+    }
+  
+  
+  .card {
+    background-color: #F6F4EB;
+    border: 1px solid #3b1f1f;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .card h3 {
+    color: #444;
+  }
+  
+  .booking-button {
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #3b3030;
+    background-color: #c8ced5;
+    border: none;
+    border-radius: 44px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+  
+  
+  .booking-button:hover {
+    background-color: #d3e5dc;
+  }
+  
+  .confirm-booking, .cancel-booking {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .cancel-booking {
+    background-color: #dc3545;
+  }
+  
+  .cancel-booking:hover {
+    background-color: #c82333;
+  }
+  
+  .confirm-booking:hover {
+    background-color: #218838;
+  }
+  /* Card styling */
+.cards {
+    background-color: #ffffff; /* White card background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    overflow: hidden; /* Ensures content stays within the card */
+    width: 280px; /* Fixed width for consistency */
+    text-align: center; /* Center text and images */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    padding: 20px;/* Smooth hover effect */
+  }
+  
+  .cards:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  /* Image styling */
+  .cards img {
+    width: 100%; /* Full width image */
+    height: 180px; /* Fixed height for uniformity */
+    object-fit: cover; /* Maintains aspect ratio, covers container */
+    border-bottom: 1px solid #ddd; /* Divider below image */
+  }
+  
+  /* Text content styling */
+  .cards h3 {
+    font-size: 1.2rem;
+    color: #333; /* Dark text */
+    margin: 15px 0 10px;
+  }
+  
+  .cards p {
+    font-size: 0.9rem;
+    color: #555; /* Subtle text */
+    margin: 0 10px 15px;
+  }
+  
+  /* Button styling */
+  .booking-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #fff; /* White text */
+    background-color: #007bff; /* Primary blue color */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none; /* No underline */
+    transition: background-color 0.3s ease; /* Smooth color change */
+  }
+  
+  .booking-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .cards {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+
+
+  /* General form styling */
+form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #96d0d7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Ensures text is aligned to the left */
+}
+
+/* Heading style */
+h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+  margin-left: 5px; /* Optional: Add slight left margin for better alignment */
+}
+
+/* Input field styling */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Placeholder text styling */
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+/* Textarea specific styling */
+textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: auto;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Error and Success Messages */
+input:invalid {
+  border-color: #dc3545;
+}
+
+input:valid {
+  border-color: #1c5329;
+}
+
+.bottom{
+  position: absolute;
+  text-align: center;
+  margin-top: 30%;
+  width: 50%;
+}
+
+.items{
+ 
+  justify-content: right;
+  text-align: right;
+  
+}
+nav{
+  text-decoration: none;
+}

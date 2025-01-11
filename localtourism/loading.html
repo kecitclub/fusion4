@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Nepal</title>
+  <link rel="stylesheet" href="loading.css">
+ 
+</head>
+<body>
+  <nav class="items">
+    <a href="undisplay.php">Unexplored Places</a>
+</nav>
+
+  <h1>Welcome to Discover Nepal</h1>
+  <h3>Explore the beauty of Nepal and its wonders.</h3>
+  <h3>Featured Destinations</h3>
+
+  <div class="container">
+    <div class="card">
+      <img src="./Assets/kathmandu.jpg" alt="Kathmandu">
+      <h3>Kathmandu</h3>
+      <p>It is a religious place.</p>
+      <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="./Assets/lumbini (1).jpg" alt="Lumbini">
+      <h3>Lumbini</h3>
+      <p>It is the birthplace of Lord Buddha.</p>
+      <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="./Assets/pokhara (1).jpg" alt="Pokhara">
+      <h3>Pokhara</h3>
+      <p>It is a beautiful city.</p>
+      <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="./Assets/chitwan.jpg" alt="Chitwan">
+      <h3>Chitwan</h3>
+      <p>It is a place where you can see wild animals.</p>
+      <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+
+    <div class="card">
+      <img src="./Assets/mt-everest (1).jpg" alt="Everest Base Camp">
+      <h3>Everest Base Camp</h3>
+      <p>It is the highest peak in the world.</p>
+      <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+  </div>
+  <h2>unknown-destination</h2>
+  <div class="second_container">    
+    <div class="cards">
+        <img src="./Assets/Manang (1).jpg" alt="Manang">
+        <h3>manang</h3>
+        <p>It is a religious place.</p>
+        <a href="book.html" class="booking-button">Book Now</a>
+    </div>
+    <div class="cards">
+        <img src="./Assets/mustang-2 (1).jpg" alt="mustang-2">
+        <h3>Everest Base Camp</h3>
+        <p>It is the highest peak in the world.</p>
+        <a href="book.html" class="booking-button">Book Now</a>
+      </div>
+        <div class="cards">
+            <img src="./Assets/rolpa (1).jpg" alt="rolpa">
+            <h3>rolpa </h3>
+            <p>It is the highest peak in the world.</p>
+            <a href="book.html" class="booking-button">Book Now</a>
+  </div>
+<div class="bottom">
+  <h3>Submit Your Review</h3>
+<form action="reviewsubmit.php" method="post">
+    <label for="destination">Destination:</label>
+    <input type="text" name="destination" id="destination" placeholder="Enter destination name" required>
+    <br>
+    <label for="name">Your Name:</label>
+    <input type="text" name="name" id="name" placeholder="Enter your name" required>
+    <br>
+    <label for="message">Your Review:</label>
+    <textarea name="message" id="message" placeholder="Write your review" required></textarea>
+    <br>
+    <label for="rating">Rating (1-5):</label>
+    <input type="number" name="rating" id="rating" min="1" max="5" required>
+    <br>
+    <input type="submit" value="Submit Review">
+</form>
+
+<h3>Submit Unexplored Places</h3>
+<form action="unexplore.php" method="post">
+    <label for="place_name">Place Name:</label>
+    <input type="text" name="place_name" id="place_name" placeholder="Enter place name" required>
+    <br>
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" placeholder="Describe the place" required></textarea>
+    <br>
+    <label for="location">Location (City, Area):</label>
+    <input type="text" name="location" id="location" placeholder="Enter location" required>
+    <br>
+    <label for="submitted_by">Your Name:</label>
+    <input type="text" name="submitted_by" id="submitted_by" placeholder="Enter your name" required>
+    <br>
+    <input type="submit" value="Submit Place">
+</form>
+</div>
+  
+</body>
+</html>
